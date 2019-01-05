@@ -1,0 +1,11 @@
+<% @events.reverse.each do |event|%>
+<ul>
+    <li>
+        <p>Title: <%=event.title%></p>
+        <p>Date: <%=event.date%></p>
+        <span>Creator: <%= link_to event.user.name , user_path(event.user) %></span>
+    </li>
+    </ul>
+<%end%>
+
+<%= link_to 'Back to your profile', user_path(session[:user_id]) %>

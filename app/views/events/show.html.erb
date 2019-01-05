@@ -1,0 +1,6 @@
+<h1>Event details </h1>
+<span> Event name: </span> <%=@event.title%><br>
+<span> Event date: </span> <%=@event.date%><br>
+<span> Event creator: </span> <%=@event.user.name%><br>
+<%= link_to 'Profile', user_path(@event.user) %>
+
