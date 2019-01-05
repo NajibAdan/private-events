@@ -16,9 +16,23 @@ Email: <%=@user.email%>
         <span>Title: </span><%=event.title%>
         <br>
         <span>Date: </span><%=event.date%>
+        <br>
+        <span>Description: </span><%=event.description%>
     </li>
     </ul>
 <%end%>
 
+<strong> Events you're attending </strong>
+<% @user.events_attended.each do |event|%>
+    <li>
+        <span>Title: </span><%=event.title%>
+        <br>
+        <span>Date: </span><%=event.date%>
+        <br>
+        <span>Description: </span><%=event.description%>
+        <span><%= link_to event.creator.name, user_path(event.creator) %>
+    </li>
+    </ul>
+<%end%>
 <br>
 <%= link_to 'All events', events_path %>

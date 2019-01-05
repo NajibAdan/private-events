@@ -3,7 +3,9 @@
     <li>
         <p>Title: <%=event.title%></p>
         <p>Date: <%=event.date%></p>
-        <span>Creator: <%= link_to event.user.name , user_path(event.user) %></span>
+        <p>Description: <%=event.description%></p>
+        <span>Creator: <%= link_to event.creator.name , user_path(event.creator) %></span>
+        <<%= link_to 'Event profile', event_path(event) %>>
     </li>
     </ul>
 <%end%>

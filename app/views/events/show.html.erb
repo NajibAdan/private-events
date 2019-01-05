@@ -1,6 +1,12 @@
 <h1>Event details </h1>
 <span> Event name: </span> <%=@event.title%><br>
 <span> Event date: </span> <%=@event.date%><br>
-<span> Event creator: </span> <%=@event.user.name%><br>
-<%= link_to 'Profile', user_path(@event.user) %>
+<span> Event creator: </span> <%=@event.creator.name%><br>
+<%if !@event.attendees.blank?%>
+    <span> People attending the event: </span>
+    <%@event.attendees.each do |attendee|%>
+        <strong><%=attendee.name%></strong>
+    <%end%>
+<%end%>
+<%= link_to 'Back to your Profile', user_path(@event.creator) %>
 
